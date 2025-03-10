@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "doctor-queue-system",
   "version": "1.0.0",
   "description": "Doctor Queue Management System",
@@ -12,5 +13,23 @@
   },
   "dependencies": {
     "concurrently": "^7.6.0"
+=======
+  "name": "doctor-queue-backend",
+  "version": "1.0.0",
+  "description": "Doctor Queue Management System Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+>>>>>>> 92ae137429e26be20a54a66408beb5bff2d44933
   }
 } 
