@@ -8,6 +8,6 @@ services:
       - key: MONGODB_URI
         value: mongodb+srv://anishshetty2417:Anish123@database.aw2ek.mongodb.net/doctor-queue
       - key: JWT_SECRET
-        value: your-jwt-secret
+        value: anishshetty2417
       - key: NODE_ENV
         value: production 
