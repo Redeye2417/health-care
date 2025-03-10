@@ -1,24 +1,33 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import DoctorList from './pages/DoctorList';
-import AppointmentForm from './pages/AppointmentForm';
-import QueueStatus from './pages/QueueStatus';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import DoctorDashboard from './pages/DoctorDashboard';
+import PatientDashboard from './pages/PatientDashboard';
+import BookAppointment from './pages/BookAppointment';
+import { AuthProvider } from './context/AuthContext';
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/doctors" element={<DoctorList />} />
-          <Route path="/book-appointment" element={<AppointmentForm />} />
-          <Route path="/queue-status" element={<QueueStatus />} />
-        </Routes>
-      </div>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <div className="min-h-screen bg-gray-100">
+          <Navbar />
+          <div className="container mx-auto px-4 py-8">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+              <Route path="/patient/dashboard" element={<PatientDashboard />} />
+              <Route path="/book-appointment" element={<BookAppointment />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
+    </AuthProvider>
   );
 }
 
