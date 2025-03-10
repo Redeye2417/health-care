@@ -1,6 +1,12 @@
 [build]
-  command = "cd frontend && npm install && npm run build"
-  publish = "frontend/build"
+  base = "frontend"
+  command = "CI=false && npm install && npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "16"
+  REACT_APP_API_URL = "https://doctor-queue-backend.onrender.com"
+  CI = "false"
 
 [[redirects]]
   from = "/*"
